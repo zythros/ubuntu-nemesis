@@ -23,7 +23,7 @@ ENTRIES=(
     "803-apps-setup.sh"         "Install preferred apps"
     "810-wallpaper-setup.sh"    "Set up wallpaper cycling system"
     "820-dmenu-setup.sh"        "Build dmenu; wire j4-dmenu-desktop into dwm"
-    "830-slstatus-setup.sh"     "Build slstatus; write CPU/RAM/datetime to DWM bar"
+    "830-slstatus-setup.sh"     "Build slstatus; write datetime to DWM bar"
     "837-rgb-setup.sh"          "Install OpenRGB; set all RGB hardware to #ff8000 at boot"
     "840-snapper-setup.sh"      "Configure Snapper for BTRFS snapshots"
     "870-vm-clipboard-setup.sh" "SPICE clipboard sharing (VM guests only)"

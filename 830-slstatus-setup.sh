@@ -100,7 +100,7 @@ tput sgr0
 ##################################################################################################################################
 # 4. Strip volume component from config.h
 #    The fork's config.h includes a pamixer-based volume entry; remove it so
-#    the bar shows only CPU, RAM, and datetime.
+#    the bar shows only the datetime.
 ##################################################################################################################################
 
 echo
@@ -150,7 +150,7 @@ else
     tput sgr0
     cat >> "$XPROFILE" <<'XPROFILE_ENTRY'
 
-# slstatus — writes CPU/RAM/datetime to DWM status bar
+# slstatus — writes datetime to DWM status bar
 slstatus &
 XPROFILE_ENTRY
     tput setaf 2
