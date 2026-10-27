@@ -98,8 +98,8 @@ echo "Source ready."
 tput sgr0
 
 ##################################################################################################################################
-# 4. Strip volume component from config.h
-#    The fork's config.h includes a pamixer-based volume entry; remove it so
+# 4. Strip volume, CPU and RAM components from config.h
+#    The fork's config.h includes volume (pamixer), CPU and RAM entries; remove them so
 #    the bar shows only the datetime.
 ##################################################################################################################################
 
