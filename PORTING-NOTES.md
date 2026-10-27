@@ -25,7 +25,7 @@ real Ubuntu machine yet — first live run is the real test.
   and `chaotic-aur-removal.sh` are dropped (nothing to port to). The Ubuntu
   analogue of "enable an extra official repo" is enabling archive components
   (`universe`, `multiverse`, `restricted`), done per-script on demand. No PPAs.
-- **Desktop-database / icon-cache refresh** at the end of 803 and 836 removed —
+- **Desktop-database / icon-cache refresh** at the end of 803 removed —
   dpkg triggers do it.
 
 ## Init system: OpenRC → systemd (mostly from arch-systemd-nemesis)
@@ -44,8 +44,8 @@ real Ubuntu machine yet — first live run is the real test.
 - **870:** `virt-what` → `systemd-detect-virt --vm`. `spice-vdagentd` is
   socket-activated on Ubuntu; `qemu-guest-agent.service` is static
   (udev-started), so it's only started, not enabled.
-- **836 / 895:** `rc-update`/`rc-service` → `systemctl enable --now`
-  (`cups`, `avahi-daemon`, `libvirtd.service`, `virtlogd.socket`).
+- **895:** `rc-update`/`rc-service` → `systemctl enable --now`
+  (`libvirtd.service`, `virtlogd.socket`).
 
 ## Ubuntu-specific changes
 
@@ -74,10 +74,6 @@ real Ubuntu machine yet — first live run is the real test.
   from VideoLAN and builds it locally** — Ubuntu's sanctioned route, but the
   one place these scripts fetch something from outside the archive.
 - **803:** `python-yaml`/`python-matplotlib` → `python3-yaml`/`python3-matplotlib`.
-- **836:** `epson-inkjet-printer-escpr2` isn't in the Ubuntu archive (only the
-  older `printer-driver-escpr`). Skipped with instructions: Epson's own `.deb`,
-  or driverless IPP (`lpadmin -m everywhere`, untested on the ET-3950).
-  Printer admin group is `lpadmin` on Ubuntu (artix used `lp`).
 - **837:** `openrgb` is in the archive **only from 26.04**. On 24.04 the
   script stops with instructions (upstream `.deb` is third-party).
 - **840:** `snap-pac` → snapper's own apt hook (`/etc/apt/apt.conf.d/80snapper`).
@@ -121,7 +117,7 @@ real Ubuntu machine yet — first live run is the real test.
 - `801-chaotic-aur-setup.sh`, `chaotic-aur-removal.sh` — no Ubuntu equivalent.
 - `897-webull-setup.sh` — gitignored/local-only in artix-nemesis; same here.
 - `NOTES.md` — gitignored session log in artix-nemesis; same here.
-- `861-mpd-setup.sh` — ported, then removed (not needed on this machine).
+- `836-printer-setup.sh`, `861-mpd-setup.sh` — ported, then removed (not needed).
 
 ## Carried-over loose ends from artix-nemesis
 

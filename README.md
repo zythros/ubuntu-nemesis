@@ -23,7 +23,7 @@ cd ubuntu-nemesis
 Or run any numbered script standalone: `./803-apps-setup.sh`.
 
 **Read every script before running it.** These are tailored to one person's
-hardware and preferences (GPU models, printer IP, disk paths, package
+hardware and preferences (GPU models, disk paths, package
 choices) — treat them as a reference to adapt, not a turnkey installer.
 
 ## Package policy
@@ -31,7 +31,7 @@ choices) — treat them as a reference to adapt, not a turnkey installer.
 Official Ubuntu archive only (main / restricted / universe / multiverse —
 enabled on demand by `lib.sh`'s `ensure_apt_components`). No PPAs, no
 third-party apt repos, no snaps or flatpaks. Things that aren't in the archive
-(Epson ESCPR2 driver, grub-btrfs, snapper-rollback, OpenRGB on 24.04) are
+(grub-btrfs, snapper-rollback, OpenRGB on 24.04) are
 skipped with manual instructions — the Ubuntu equivalent of artix-nemesis's
 "no AUR" rule.
 
