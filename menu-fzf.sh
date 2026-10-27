@@ -27,7 +27,6 @@ ENTRIES=(
     "836-printer-setup.sh"      "Install CUPS + Epson ET-3950 driver; add printer at 10.0.100.103"
     "837-rgb-setup.sh"          "Install OpenRGB; set all RGB hardware to #ff8000 at boot"
     "840-snapper-setup.sh"      "Configure Snapper for BTRFS snapshots"
-    "861-mpd-setup.sh"          "Install MPD + ncmpcpp TUI client; enable user service"
     "870-vm-clipboard-setup.sh" "SPICE clipboard sharing (VM guests only)"
     "880-nvidia-bm-setup.sh"    "NVIDIA drivers — bare metal (dual GPU)"
     "881-nvidia-vm-setup.sh"    "NVIDIA drivers — VM guest (3090 passthrough)"

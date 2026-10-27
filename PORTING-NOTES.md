@@ -41,15 +41,6 @@ real Ubuntu machine yet — first live run is the real test.
   stable ID). The `timeout 10` on `udevadm trigger` (eudev hang) is dropped.
 - **840:** `snapper-openrc` services → `snapper-timeline.timer` /
   `snapper-cleanup.timer`.
-- **861:** system MPD patched to run as `zythros` → **`systemd --user`
-  mpd.service** + `loginctl enable-linger`, config in `~/.config/mpd`. Ubuntu's
-  `mpd` package enables a *system* `mpd.service`/`mpd.socket` on install;
-  861 disables those so they don't grab port 6600. Also fixes the hardcoded
-  `zythros` user/home and `/run/user/1000`.
-- **861 security fix carried over from arch-systemd-nemesis:** the TCP
-  listener (`bind_to_address "any"`) now requires a password; the local unix
-  socket stays password-free. artix-nemesis still has the unauthenticated
-  listener — worth backporting there.
 - **870:** `virt-what` → `systemd-detect-virt --vm`. `spice-vdagentd` is
   socket-activated on Ubuntu; `qemu-guest-agent.service` is static
   (udev-started), so it's only started, not enabled.
@@ -93,8 +84,6 @@ real Ubuntu machine yet — first live run is the real test.
   `grub-btrfs` and `snapper-rollback` aren't in the Ubuntu archive → skipped
   with GitHub links; if installed manually, 840 detects and wires them up.
   Since grub-btrfs is optional now, the hard "GRUB required" exit is dropped.
-- **861:** `rmpc` isn't in the Ubuntu archive → `ncmpcpp`, pointed at the
-  local unix socket (no password needed there).
 - **880 / 881:** `nvidia-open-dkms` + Arch `[extra]` → `ubuntu-drivers install
   nvidia:<branch>-open` from `restricted`. Branch defaults to whatever
   `ubuntu-drivers devices` recommends (override with `NVIDIA_BRANCH`).
@@ -132,6 +121,7 @@ real Ubuntu machine yet — first live run is the real test.
 - `801-chaotic-aur-setup.sh`, `chaotic-aur-removal.sh` — no Ubuntu equivalent.
 - `897-webull-setup.sh` — gitignored/local-only in artix-nemesis; same here.
 - `NOTES.md` — gitignored session log in artix-nemesis; same here.
+- `861-mpd-setup.sh` — ported, then removed (not needed on this machine).
 
 ## Carried-over loose ends from artix-nemesis
 
